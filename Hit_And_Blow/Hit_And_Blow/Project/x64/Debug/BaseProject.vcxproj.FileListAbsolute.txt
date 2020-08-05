@@ -1,0 +1,2 @@
+C:\Users\tyskf\source\repos\Hit_And_Blow\Hit_And_Blow\Project\x64\Debug\BaseProject.exe
+C:\Users\tyskf\source\repos\Hit_And_Blow\Hit_And_Blow\Project\x64\Debug\BaseProject.pdb
