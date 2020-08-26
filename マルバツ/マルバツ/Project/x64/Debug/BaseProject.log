@@ -1,44 +1,6 @@
 ﻿  DrawManager.cpp
   InputManager.cpp
   WinMain.cpp
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(106,3): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(106,3): error C2065: '※': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(110,3): error C2143: 構文エラー: ';' が 'if' の前にありません。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(134,10): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(134,10): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(134,10): error C2065: '※※': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(136,6): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(136,6): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(136,6): error C2065: '※※': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(140,5): error C2143: 構文エラー: ';' が '}' の前にありません。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(146,3): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(146,3): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(146,3): error C3872: '0x3000': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(147,3): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(147,3): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(147,3): error C3872: '0x3000': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(148,3): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(148,3): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(148,3): error C3872: '0x3000': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(146,3): error C2065: '※※　': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(147,3): error C2146: 構文エラー: ';' が、識別子 '※※　' の前に必要です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(149,3): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(149,3): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(149,3): error C3872: '0x3000': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(147,3): error C2065: '※※　': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(148,3): error C2146: 構文エラー: ';' が、識別子 '※※　' の前に必要です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(150,3): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(150,3): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(150,3): error C3872: '0x3000': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(148,3): error C2065: '※※　': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(149,3): error C2146: 構文エラー: ';' が、識別子 '※※　' の前に必要です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(149,3): error C2065: '※※　': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(150,3): error C2146: 構文エラー: ';' が、識別子 '※※　' の前に必要です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(150,3): error C2065: '※※　': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(155,3): error C2146: 構文エラー: ';' が、識別子 'ScreenFlip' の前に必要です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(175,2): error C3873: '0x203b': この文字を識別子の最初の文字にすることはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(175,2): error C3872: '0x203b': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(175,2): error C3872: '0x3000': この文字を識別子で使用することはできません
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(175,2): error C2065: '※※　': 定義されていない識別子です。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(176,1): error C2143: 構文エラー: ';' が '}' の前にありません。
+C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(134,8): error C2660: 'IsPutStone': 関数に 2 個の引数を指定できません。
+C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(52,6): message : 'IsPutStone' の宣言を確認してください
   コードを生成中...

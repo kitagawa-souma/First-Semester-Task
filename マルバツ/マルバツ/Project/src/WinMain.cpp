@@ -103,7 +103,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		// 以下、毎フレーム更新する処理
 		// ----------------------------------------------------
 		InputUpdate();			// 入力処理更新関数の呼び出し
-		※ //winner に勝利者情報を代入	// 勝利者のチェック
+		winner = CheckWinner(); //winner に勝利者情報を代入	// 勝利者のチェック
 
 		// --- 入力状況をチェックして、適切な処理を行う
 		// 決着がついてない時だけ入力を受け付けるように if文 でチェックする
@@ -131,23 +131,38 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			{
 				// 現在の座標が有効か if文 でチェックし、
 				// 結果が true の時、以下の処理を行う
-				if ( ※※ )
+				if ( IsPutStone(pos_x, pos_y) == true )
 				{
-					※※
+					map[pos_x][pos_y] = turn;
 					// 以下の処理を実装する
 					// 選択されている座標と対応するmap配列の要素へturnの値を代入
 					// 次のターンに回すため、turnの値を変更する
+					if (turn == STONE_BLACK)
+					{
+						turn = STONE_WHITE;
+					}
+					else if(turn == STONE_WHITE)
+					{
+						turn = STONE_BLACK;
+					}
 				}
 			}
 		}
 
 		// 以下、描画処理
 		// ----------------------------------------------------
-		※※　// 情報文章を描画
-		※※　// ゲームクリアの文字を描画
-		※※　// 枠線を描画
-		※※　//２重for文を使って盤面の石を描画する
-		※※　//カーソルを描画
+		DrawInformation(turn);				//情報文章を描画
+		DrawGameClear(winner);				//ゲームクリアの文字を描画
+		DrawBgLine();						//枠線を描画
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				DrawStone(i, j, STONE_BLACK);
+				DrawStone(i, j, STONE_WHITE);
+			}
+		}									//２重for文を使って盤面の石を描画する
+		DrawCursor(pos_x, pos_y);						//カーソルを描画
 
 		// ＤＸライブラリを使う上で、モニターへゲーム画面を表示するためのお約束
 		// 必ずループの最後で呼び出す
@@ -172,7 +187,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 // ==============================
 bool IsPutStone( int x, int y )
 {
-	※※　//盤面の x, y の位置に石が置けるならtrue,置けないならfalseを返す処理
+	if (map[x][y] == STONE_MAX)//盤面の x, y の位置に石が置けるならtrue,置けないならfalseを返す処理
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 // ==============================
@@ -206,6 +228,28 @@ int CheckWinner()
 			{
 				return WINNER_WHITE;
 			}
+		}
+	}
+	if (map[0][0] == map[1][1] && map[0][0] == map[2][2])
+	{
+		if (map[0][0] == STONE_BLACK)
+		{
+			return WINNER_BLACK;
+		}
+		else if (map[0][0] == STONE_WHITE)
+		{
+			return WINNER_WHITE;
+		}
+	}
+	else if(map[0][2] == map[1][1] && map[0][2] == map[2][0])
+	{
+		if (map[0][2] == STONE_BLACK)
+		{
+			return WINNER_BLACK;
+		}
+		else if (map[0][2] == STONE_WHITE)
+		{
+			return WINNER_WHITE;
 		}
 	}
 	//以下の処理を実装する

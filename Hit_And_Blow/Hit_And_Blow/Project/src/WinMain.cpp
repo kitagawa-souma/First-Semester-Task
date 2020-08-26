@@ -107,7 +107,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//　// cursorを０で初期化
 	for (int i = 0; i < DIGITS; i++)
 	{
-		num[i] = 0;
+		num[i] = i;
 	}
 	//　// 配列 num を for文 で初期化
 
