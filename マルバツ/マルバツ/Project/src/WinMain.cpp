@@ -37,6 +37,7 @@
 #include "WinMain.h"
 #include "InputManager.h"
 #include "DrawManager.h"
+#include "KeyDefionition.h"
 #include <stdio.h>
 #include <time.h>
 
@@ -49,7 +50,7 @@ int map[STAGE_HEIGHT][STAGE_WIDTH];	// 横:STAGE_WIDTH、縦:STAGE_HEIGHTのint�
 // 関数プロトタイプ宣言
 // ==============================
 // 盤面の x, y の位置に石が置けるかどうか
-bool IsPutStone(); // bool型の戻り値、int型の引数x,yを持つIsPutStone関数を宣言
+bool IsPutStone(int, int); // bool型の戻り値、int型の引数x,yを持つIsPutStone関数を宣言
 // 勝者が居るかを調べる
 int CheckWinner(); // int型の戻り値を持つCheckWinner関数を宣言
 
@@ -112,19 +113,35 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			// 上下左右の入力があった時の処理
 			if(IsPushKey(MY_INPUT_DOWN))
 			{
-				pos_y -= 1; //pos_yの値を 1 減らす
+				pos_y += 1; //pos_yの値を 1 減らす
 			}
 			else if(IsPushKey(MY_INPUT_UP))
 			{
-				pos_y += 1; //pos_yの値を 1 増やす
+				pos_y -= 1; //pos_yの値を 1 増やす
 			}
 			else if(IsPushKey(MY_INPUT_RIGHT))
 			{
-				pos_x -= 1; //pos_xの値を 1 減らす
+				pos_x += 1; //pos_xの値を 1 減らす
 			}
 			else if(IsPushKey(MY_INPUT_LEFT))
 			{
-				pos_x += 1; //pos_xの値を 1 増やす
+				pos_x -= 1; //pos_xの値を 1 増やす
+			}
+			if (pos_x >= 3)
+			{
+				pos_x = 2;
+			}
+			else if(pos_x <= -1)
+			{
+				pos_x = 0;
+			}
+			if (pos_y >= 3)
+			{
+				pos_y = 2;
+			}
+			else if (pos_y <= -1)
+			{
+				pos_y = 0;
 			}
 			// 決定(=エンターキー)が押された時の処理
 			else if(IsPushKey(MY_INPUT_ENTER))
@@ -158,8 +175,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				DrawStone(i, j, STONE_BLACK);
-				DrawStone(i, j, STONE_WHITE);
+				if (map[i][j] == STONE_WHITE)
+				{
+					DrawStone(i, j, STONE_WHITE);
+				}
+				else if(map[i][j] == STONE_BLACK)
+				{
+					DrawStone(i, j, STONE_BLACK);
+				}
 			}
 		}									//２重for文を使って盤面の石を描画する
 		DrawCursor(pos_x, pos_y);						//カーソルを描画
@@ -204,54 +227,54 @@ int CheckWinner()
 {
 	for (int i = 0; i < STAGE_HEIGHT; i++)
 	{
-		if (map[i][0] == map[i][1] && map[i][0] == map[i][2])
+		if (map[i][0] == STONE_WHITE && map[i][1] == STONE_WHITE && map[i][2] == STONE_WHITE)
 		{
-			if (map[i][0] == STONE_BLACK)
-			{
-				return WINNER_BLACK;
-			}
-			else if(map[i][0] == STONE_WHITE)
-			{
-				return WINNER_WHITE;
-			}
+			return WINNER_WHITE;
+		}
+		else if (map[0][i] == STONE_WHITE && map[1][i] == STONE_WHITE && map[2][i] == STONE_WHITE)
+		{
+			return WINNER_WHITE;
+		}
+		else if (map[0][0] == STONE_WHITE && map[1][1] == STONE_WHITE && map[2][2] == STONE_WHITE)
+		{
+			return WINNER_WHITE;
+		}
+		else if (map[2][0] == STONE_WHITE && map[1][1] == STONE_WHITE && map[0][2] == STONE_WHITE)
+		{
+			return WINNER_WHITE;
+		}
+
+		if (map[i][0] == STONE_BLACK && map[i][1] == STONE_BLACK && map[i][2] == STONE_BLACK)
+		{
+			return WINNER_BLACK;
+		}
+		else if (map[0][i] == STONE_BLACK && map[1][i] == STONE_BLACK && map[2][i] == STONE_BLACK)
+		{
+			return WINNER_BLACK;
+		}
+		else if (map[0][0] == STONE_BLACK && map[1][1] == STONE_BLACK && map[2][2] == STONE_BLACK)
+		{
+			return WINNER_BLACK;
+		}
+		else if (map[2][0] == STONE_BLACK && map[1][1] == STONE_BLACK && map[0][2] == STONE_BLACK)
+		{
+			return WINNER_BLACK;
 		}
 	}
+
 	for (int j = 0; j < STAGE_HEIGHT; j++)
 	{
-		if (map[0][j] == map[1][j] && map[0][j] == map[2][j])
+		for (int x = 0; x < STAGE_WIDTH; x++)
 		{
-			if (map[0][j] == STONE_BLACK)
+			if (IsPutStone(x, j) == true)
 			{
-				return WINNER_BLACK;
-			}
-			else if (map[0][j] == STONE_WHITE)
-			{
-				return WINNER_WHITE;
+				return WINNER_NON;
 			}
 		}
 	}
-	if (map[0][0] == map[1][1] && map[0][0] == map[2][2])
-	{
-		if (map[0][0] == STONE_BLACK)
-		{
-			return WINNER_BLACK;
-		}
-		else if (map[0][0] == STONE_WHITE)
-		{
-			return WINNER_WHITE;
-		}
-	}
-	else if(map[0][2] == map[1][1] && map[0][2] == map[2][0])
-	{
-		if (map[0][2] == STONE_BLACK)
-		{
-			return WINNER_BLACK;
-		}
-		else if (map[0][2] == STONE_WHITE)
-		{
-			return WINNER_WHITE;
-		}
-	}
+
+	return WINNER_DRAW;
+	
 	//以下の処理を実装する
 	// 縦、横、斜めが同じ石かどうかを調べる
 	// STONE_WHITE, STONE_BLACK, STONE_MAXを上手く使いましょう

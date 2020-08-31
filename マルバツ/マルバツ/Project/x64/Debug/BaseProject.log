@@ -1,6 +1,2 @@
-﻿  DrawManager.cpp
-  InputManager.cpp
-  WinMain.cpp
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(134,8): error C2660: 'IsPutStone': 関数に 2 個の引数を指定できません。
-C:\Users\tyskf\source\repos\マルバツ\マルバツ\Project\src\WinMain.cpp(52,6): message : 'IsPutStone' の宣言を確認してください
-  コードを生成中...
+﻿  WinMain.cpp
+  BaseProject.vcxproj -> C:\Users\tyskf\Documents\First-Semester-Task\マルバツ\マルバツ\Project\x64\Debug\BaseProject.exe

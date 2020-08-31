@@ -1,0 +1,2 @@
+C:\Users\tyskf\Documents\First-Semester-Task\マルバツ\マルバツ\Project\x64\Debug\BaseProject.exe
+C:\Users\tyskf\Documents\First-Semester-Task\マルバツ\マルバツ\Project\x64\Debug\BaseProject.pdb
